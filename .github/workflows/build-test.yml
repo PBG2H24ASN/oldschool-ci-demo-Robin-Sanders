@@ -22,11 +22,11 @@ on:
                     app.sh
                   exit 1
                 else
-                fi
+                
                   echo "Start fehlgeschlagen"
                   exit 2
+                
                 fi
-                  fi
     
                 
                 
