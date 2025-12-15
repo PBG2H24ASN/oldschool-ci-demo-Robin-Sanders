@@ -18,8 +18,8 @@ on:
                 output=$(docker run oldschool-demo-image-Robin)
                 echo "$output"
                 if [ "$output" == "OldSchool GmbH – automatischer Build erfolgreich!" ]; then
-                    app.sh
-                  exit 1
+                    chmod +x app.sh app.sh
+                  exit 0
                 else
                 
                   echo "Start fehlgeschlagen"
