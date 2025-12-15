@@ -16,7 +16,7 @@ jobs:
         run: docker build -t oldschool-demo-robin .
       - name: Container Starten und testen
         run: |
-              output=$(docker run oldschool-demo-image-Robin)
+              output=$(docker run oldschool-demo-image-robin)
               echo "$output"
               if [ "$output" = "OldSchool GmbH – automatischer Build erfolgreich!" ]; then
                   chmod +x app.sh app.sh
