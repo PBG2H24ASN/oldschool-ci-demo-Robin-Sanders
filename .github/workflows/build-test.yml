@@ -8,14 +8,13 @@ on:
       runs on: ubuntu-latest
       steps:
         - name: Install docker
-          run:
+          run: |
                 sudo apt-get update 
                 sudo apt-get install -y docker.io docker --version
         - name: Run docker Image
-          run: 
-            docker build -t oldschool-demo-Robin
+          run: docker build -t oldschool-demo-Robin
         - name: Container Starten und testen
-          run:
+          run: |
                 output=$(docker run oldschool-demo-image-Robin)
                 echo "$output"
                 if [ "$output" == "OldSchool GmbH – automatischer Build erfolgreich!" ]; then
