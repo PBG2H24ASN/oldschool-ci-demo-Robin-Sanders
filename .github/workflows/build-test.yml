@@ -2,30 +2,29 @@ name: Build and Test Docker Image
 
 on:
   push:
-
-  jobs:
-    build and test:
-      runs on: ubuntu-latest
-      steps:
-        - name: Install docker
-          run: |
-                sudo apt-get update 
-                sudo apt-get install -y docker.io docker --version
-        - name: Run docker Image
-          run: docker build -t oldschool-demo-Robin
-        - name: Container Starten und testen
-          run: |
-                output=$(docker run oldschool-demo-image-Robin)
-                echo "$output"
-                if [ "$output" = "OldSchool GmbH – automatischer Build erfolgreich!" ]; then
-                    chmod +x app.sh app.sh
-                  exit 0
-                else
-                
-                  echo "Start fehlgeschlagen"
-                  exit 2
-                
-                fi
+jobs: 
+  build_and_test:
+    runs-on: ubuntu-latest 
+    steps:
+      - name: Install docker
+        run: |
+              sudo apt-get update 
+              sudo apt-get install -y docker.io docker --version
+      - name: Run docker Image
+        run: docker build -t oldschool-demo-Robin
+      - name: Container Starten und testen
+        run: |
+              output=$(docker run oldschool-demo-image-Robin)
+              echo "$output"
+              if [ "$output" = "OldSchool GmbH – automatischer Build erfolgreich!" ]; then
+                  chmod +x app.sh app.sh
+                exit 0
+              else
+              
+                echo "Start fehlgeschlagen"
+                exit 2
+              
+              fi
     
                 
                 
