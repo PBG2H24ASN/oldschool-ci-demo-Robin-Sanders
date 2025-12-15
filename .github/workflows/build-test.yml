@@ -17,7 +17,7 @@ on:
           run: |
                 output=$(docker run oldschool-demo-image-Robin)
                 echo "$output"
-                if [ "$output" == "OldSchool GmbH – automatischer Build erfolgreich!" ]; then
+                if [ "$output" = "OldSchool GmbH – automatischer Build erfolgreich!" ]; then
                     chmod +x app.sh app.sh
                   exit 0
                 else
