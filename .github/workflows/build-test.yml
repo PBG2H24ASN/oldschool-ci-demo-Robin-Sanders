@@ -18,14 +18,12 @@ jobs:
         run: |
               output=$(docker run oldschool-demo-robin)
               echo "$output"
-              if [ "$output" = "OldSchool GmbH – automatischer Build erfolgreich! (Robin)" ]; then
-                  echo "lol es ist erfolgreich gewesen"
-                exit 0
+              if [ "$output" != "OldSchool GmbH – automatischer Build erfolgreich! (Robin)" ]; then
+                  echo "lol es ist NICT erfolgreich gewesen"
+                  exit !
               else
-              
-                echo "Start fehlgeschlagen"
-                exit 2
-              
+                echo "Start NICHT fehlgeschlagen"
+                exit =
               fi
     
                 
