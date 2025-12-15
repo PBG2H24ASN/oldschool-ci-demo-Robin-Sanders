@@ -18,8 +18,8 @@ jobs:
         run: |
               output=$(docker run oldschool-demo-robin)
               echo "$output"
-              if [ "$output" = "OldSchool GmbH – automatischer Build erfolgreich!" ]; then
-                  chmod +x app.sh app.sh
+              if [ "$output" = "OldSchool GmbH – automatischer Build erfolgreich! (Robin)" ]; then
+                  echo "lol es ist erfolgreich gewesen"
                 exit 0
               else
               
